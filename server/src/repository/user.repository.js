@@ -27,4 +27,10 @@ async function upUserDB(_id, user) {
     return data;
 }
 
-module.exports = { getAllUserDB, getUserByIdDB, createUserDB, getUserByEmailDB, upUserDB };
+async function deleteUserByIdDB(_id) {
+    await TableUser.deleteOne({ _id: new ObjectId(_id)});
+    const data = await TableUser.find();
+    return data;
+}
+
+module.exports = { getAllUserDB, getUserByIdDB, createUserDB, getUserByEmailDB, upUserDB, deleteUserByIdDB };
