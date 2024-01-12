@@ -1,5 +1,6 @@
 "use client"
-import Header from "@/components/Header/Header";
+import Header from "@/components/Header/Header"
+import style from "../auth/auth.module.css"
 
 export default function Auth() {
     return (
