@@ -1,17 +1,25 @@
 "use client"
 import Header from "@/components/Header/Header";
+import style from "./reg.module.css";
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import { Button } from "@mui/material";
 
 export default function Reg() {
     return (
         <div>
-            <Header/>
-            <h1>Registration</h1>
-            <input placeholder="name..."></input>
-            <input placeholder="surname..."></input>
-            <input placeholder="age..."></input>
-            <input placeholder="email..."></input>
-            <input placeholder="password..."></input>
-            <button>Sign Up</button>
+            <Header />
+            <div className={style.registration}>
+                <h1>Registration</h1>
+
+                <TextField fullWidth label="name" id="text" />
+                <TextField fullWidth label="surname" id="text" />
+                <TextField fullWidth label="age" id="text" />
+                <TextField fullWidth label="email" id="text" />
+                <TextField fullWidth label="password" id="text" />
+
+                <Button variant="contained">Sign Up</Button>
+            </div>
         </div>
     )
 }

@@ -1,0 +1,11 @@
+.registration {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 50px;
+}
+
+.registration h1 {
+    margin-top: 20px;
+}
+
