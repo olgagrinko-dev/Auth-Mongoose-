@@ -1,5 +1,16 @@
 .navig {
     display: flex;
     justify-content: center;
-    gap: 50px;
+    background-color: rgb(231, 228, 228);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 30px;
+    gap: 250px;
+}
+
+.navig p {
+    font: 400 22px 'DM Sans';
+    color: black;
 }
