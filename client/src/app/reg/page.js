@@ -1,7 +1,6 @@
 "use client"
 import Header from "@/components/Header/Header";
 import style from "./reg.module.css";
-import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { Button } from "@mui/material";
 
