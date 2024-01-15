@@ -26,7 +26,11 @@ route.post('/', async (req, res) => {
     try {
         const data = await createUser(req.body);
         const token = generateToken(data[data.length - 1]);
-        res.cookie('Bearer', token);
+
+        res.cookie('Bearer', token, {
+            httpOnly: false,
+            secure: true
+        });
         buildResponse(res, 200, data);
     } catch (error) {
         buildResponse(res, 400, error.message);
@@ -37,7 +41,10 @@ route.post('/auth', async (req, res) => {
     try {
         const data = await authUser(req.body);
         const token = generateToken(data[0]);
-        res.cookie('Bearer', token);
+        res.cookie('Bearer', token, {
+            httpOnly: false,
+            secure: true
+        });
         buildResponse(res, 200, data);
     } catch (error) {
         buildResponse(res, 400, error.message);

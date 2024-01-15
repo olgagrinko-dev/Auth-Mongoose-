@@ -3,21 +3,36 @@ import Header from "@/components/Header/Header";
 import style from "./reg.module.css";
 import TextField from '@mui/material/TextField';
 import { Button } from "@mui/material";
+import { useState } from "react";
+import axios from "axios";
 
 export default function Reg() {
+    const [inp, setInput] = useState({ name: "", surname: "", age: "", email: "", password: "" });
+
+    function fillInp(e) {
+        setInput({ ...inp, [e.target.name]: e.target.value });
+    }
+
+    async function regUser() {
+        const data = await axios.post("http://localhost:3001/user", inp, {
+            withCredentials: true
+        })
+        console.log(data);
+    }
+
     return (
         <div>
             <Header />
             <div className={style.registration}>
                 <h1>Registration</h1>
 
-                <TextField fullWidth label="name" id="text" />
-                <TextField fullWidth label="surname" id="text" />
-                <TextField fullWidth label="age" id="text" />
-                <TextField fullWidth label="email" id="text" />
-                <TextField fullWidth label="password" id="text" />
+                <TextField onChange={fillInp} fullWidth label="name" id="text" name='name' />
+                <TextField onChange={fillInp} fullWidth label="surname" id="text" name='surname' />
+                <TextField onChange={fillInp} fullWidth label="age" id="text" name='age' />
+                <TextField onChange={fillInp} fullWidth label="email" id="text" name='email' />
+                <TextField onChange={fillInp} fullWidth label="password" id="text" name='password' />
 
-                <Button variant="contained">Sign Up</Button>
+                <Button onClick={regUser} variant="contained">Sign Up</Button>
             </div>
         </div>
     )
