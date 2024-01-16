@@ -5,9 +5,11 @@ import TextField from '@mui/material/TextField';
 import { Button } from "@mui/material";
 import { useState } from "react";
 import axios from "axios";
+import { useRouter } from 'next/navigation';
 
 export default function Reg() {
     const [inp, setInput] = useState({ name: "", surname: "", age: "", email: "", password: "" });
+    const router = useRouter();
 
     function fillInp(e) {
         setInput({ ...inp, [e.target.name]: e.target.value });
@@ -18,6 +20,7 @@ export default function Reg() {
             withCredentials: true
         })
         console.log(data);
+        router.push('/home');
     }
 
     return (
@@ -26,11 +29,11 @@ export default function Reg() {
             <div className={style.registration}>
                 <h1>Registration</h1>
 
-                <TextField onChange={fillInp} fullWidth label="name" id="text" name='name' />
-                <TextField onChange={fillInp} fullWidth label="surname" id="text" name='surname' />
-                <TextField onChange={fillInp} fullWidth label="age" id="text" name='age' />
-                <TextField onChange={fillInp} fullWidth label="email" id="text" name='email' />
-                <TextField onChange={fillInp} fullWidth label="password" id="text" name='password' />
+                <TextField onChange={fillInp} fullWidth label="name" id="text" name="name" />
+                <TextField onChange={fillInp} fullWidth label="surname" id="text" name="surname" />
+                <TextField onChange={fillInp} fullWidth label="age" id="text" name="age" />
+                <TextField onChange={fillInp} fullWidth label="email" id="text" name="email" />
+                <TextField onChange={fillInp} fullWidth label="password" id="text" name="password" />
 
                 <Button onClick={regUser} variant="contained">Sign Up</Button>
             </div>
