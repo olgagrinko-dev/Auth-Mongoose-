@@ -1,4 +1,5 @@
 import Header from "@/components/Header/Header";
+import style from "./home.module.css";
 
 export default function Reg() {
 
@@ -6,7 +7,7 @@ export default function Reg() {
         <div>
             {/* <Header /> */}
             <h1>Home</h1>
-            <p>вы авторизованы в системe</p>
+            <p>Вы авторизованы в системe!</p>
         </div>
     )
 }
