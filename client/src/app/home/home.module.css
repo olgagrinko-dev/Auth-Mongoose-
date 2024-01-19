@@ -1,0 +1,18 @@
+.homePage {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 150px;
+    text-align: center;
+    gap: 30px;
+}
+
+.homePage h1 {
+    font: 600 32px 'DM Sans';
+    color: black;
+}
+
+.homePage p {
+    font: 400 22px 'DM Sans';
+    color: black;
+}
