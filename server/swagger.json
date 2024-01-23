@@ -12,7 +12,28 @@
                     "USER"
                 ],
                 "summary": "Получение всех пользователей user из БД",
-                "description": "По нажатию на кнопку вы получите содержимое всех коллекций user"
+                "description": "По нажатию на кнопку вы получите содержимое всех коллекций user",
+                "responses": {
+                    "200": {
+                        "description": "Успешный ответ имеет вид:",
+                        "content": {
+                            "application/json": {
+                                "example": [
+                                    {
+                                        "_id": "65a574f658be0c749c11b284",
+                                        "name": "test",
+                                        "surname": "test",
+                                        "email": "test@mail.ru",
+                                        "password": "$2b$04$I0fIU79NJrB2CM4vy8iImeDW.EyThYunIRR0TG1smyXaI2NQQaLfS",
+                                        "age": 10,
+                                        "__v": 0
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "404": {}
+                }
             }
         }
     }
