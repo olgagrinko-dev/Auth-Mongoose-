@@ -27,8 +27,10 @@ export default function Reg() {
         <div>
             <Header />
             <div className={style.registration}>
+                <div className={style.titleReg}>
+                <div className={style.imgReg}></div>
                 <h1>Registration</h1>
-
+                </div>
                 <TextField onChange={fillInp} fullWidth label="name" id="text" name="name" />
                 <TextField onChange={fillInp} fullWidth label="surname" id="text" name="surname" />
                 <TextField onChange={fillInp} fullWidth label="age" id="text" name="age" />

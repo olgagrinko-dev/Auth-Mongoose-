@@ -28,7 +28,10 @@ export default function Auth() {
         <div>
             <Header />
             <div className={style.authorization}>
-                <h1>Authorization</h1>
+                <div className={style.titleAuth}>
+                    <div className={style.imgAuth}></div>
+                    <h1>Authorization</h1>
+                </div>
 
                 <TextField onChange={fillInp} fullWidth label="email" id="text" name="email" />
                 <TextField onChange={fillInp} fullWidth label="password" id="text" name="password" />
